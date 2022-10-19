@@ -76,7 +76,7 @@ class Professor:
         self.Subjects.append(s3)
 
     def Display(self):
-        print(f"Student Name: {self.First_Name + self.Last_Name}")
+        print(f"Professor Name: {self.First_Name + self.Last_Name}")
         #print(f"Age is:{self.Age}")
         print(f"Subject he/she Teaches : {self.Subjects}")
 
@@ -116,7 +116,7 @@ Enter The Sub2: business
 Enter The Sub3: accounts
 Enter The New_sub: english
 Enter The Remove_Sub: business
-Student Name: manikumar
+Professor Name: manikumar
 Subject he/she Teaches : ['economics', 'business', 'accounts']
 After Adding The New_Subjects: ['economics', 'business', 'accounlsts', 'english'] 
 After Removing The Subjects:['economics', 'accounts', 'english']
