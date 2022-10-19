@@ -118,5 +118,5 @@ Enter The New_sub: english
 Enter The Remove_Sub: business
 Student Name: manikumar
 Subject he/she Teaches : ['economics', 'business', 'accounts']
-After Adding The New_Subjects: ['economics', 'business', 'accounts', 'english'] 
+After Adding The New_Subjects: ['economics', 'business', 'accounlsts', 'english'] 
 After Removing The Subjects:['economics', 'accounts', 'english']

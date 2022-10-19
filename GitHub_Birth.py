@@ -1,40 +1,57 @@
 ####Birth Day###
 
+
 from datetime import datetime
 from datetime import date
 import time
 today = date.today()
+
+
 def user_birthday():
-    year = int(input('Enter Your Birthday[YY] '))
-    month = int(input('Enter Your Birthday[MM] '))
-    day = int(input('Enter Your Birthday [DD] '))
+    year = int(input("Year[YY]: "))
+    month = int(input("Month[MM]: "))
+    day = int(input("Day[DD]: "))
     birthday = datetime(year, month, day)
     return birthday
 
+
 def calculate_dates(birthday):
-    today == date.fromtimestamp(time.time())
+    today = date.fromtimestamp(time.time())
     birthday = date(today.year, birthday.month, birthday.day)
     if birthday < today:
-        birthday = birthday.replace(year=today.year + 1)
+        birthday = birthday.replace(year=today.year + 1,day=birthday.day+1)
         return birthday
+    elif birthday == today:
+        birthday = birthday.replace(year=today.year, day=birthday.day)
+        return birthday
+    elif birthday > today:
+        birthday = birthday.replace(year=today.year, day=birthday.day-1)
+        return birthday
+
     else:
         return birthday
 
 
-bday = user_birthday()
-t = calculate_dates(bday)
+Birthday = user_birthday()
+t = calculate_dates(Birthday)
 time_to_birthday = abs(t - today)
 days = str(time_to_birthday.days)
-h = int(days)*24
-print(f"The Next Birthday is in {days} days, {h} hours and {h*60} minutes {h*60*60} seconds left")
-
+current_time = datetime.now()
+present = current_time.hour
+hours = (24 - present)
+m = current_time.minute
+s = current_time.second
+minutes = 60 - m
+seconds = 60 * 60 - s
+print(f"The Next Birthday is in {days} days {hours} hours {minutes} minutes and {seconds} Seconds")
 
 #####Output###
 
-Enter Your Birthday[YY] 1999
-Enter Your Birthday[MM] 08
-Enter Your Birthday [DD] 19
-The Next Birthday is in 305 days, 7320 hours and 439200 minutes 26352000 seconds left
+Year[YY]: 1999
+Month[MM]: 08
+Day[DD]: 19
+The Next Birthday is in 305 days 8 hours 30 minutes and 3588 Seconds
+
 
 
 #####---GITHUB API---#####
@@ -45,10 +62,13 @@ import requests
 from pprint import pprint
 import base64
 from github import Github
+from pprint import pprint
 
 username = input("Enter the github username:")
+
 g = Github()
 user = g.get_user(username)
+
 for repo in user.get_repos():
     print(repo)
 
@@ -83,6 +103,8 @@ Repository(full_name="mani000007/pyPrograms")
 Repository(full_name="mani000007/Rebase")
 Repository(full_name="mani000007/reponew")
 Repository(full_name="mani000007/revertgit")
+
+
 Project Number: 1
 Project Name: All_in_one
 Project URL: https://github.com/mani000007/All_in_one
